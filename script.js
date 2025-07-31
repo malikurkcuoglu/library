@@ -23,13 +23,6 @@ addBookToLibrary("hobbit", "tolkien", 295, true, myLibrary);
 addBookToLibrary("hobbit", "tolkien", 295, true, myLibrary);
 addBookToLibrary("hobbit", "tolkien", 295, true, myLibrary);
 addBookToLibrary("hobbit", "tolkien", 295, true, myLibrary);
-addBookToLibrary(
-  "ssssssssssssssssssssssssssssssssssssssssssssssssss",
-  "tolkien",
-  295,
-  true,
-  myLibrary
-);
 addBookToLibrary("hobbit", "tolkien", 295, true, myLibrary);
 
 function displayLibrary(arr) {
@@ -39,14 +32,23 @@ function displayLibrary(arr) {
     const bookAuthor = document.createElement("p");
     const bookPages = document.createElement("p");
     const haveRead = document.createElement("p");
-    bookAuthor.textContent = `Written by ${book.author}`;
-    bookPages.textContent = `${book.pages} pages`;
-    haveRead.textContent = `${book.read ? "Read" : "Not read yet"}`;
+    const buttons = document.createElement("div");
+    const deleteButton = document.createElement("button");
+    const readButton = document.createElement("button");
+    buttons.classList.add("buttons");
+    deleteButton.textContent = "Delete";
+    readButton.textContent = `${book.read ? "Not Read" : "Read"}`;
+    bookAuthor.textContent = `Author: ${book.author}`;
+    bookPages.textContent = `Page: ${book.pages}`;
+    haveRead.textContent = `Read: ${book.read ? "Read" : "Not read yet"}`;
     const bookCard = document.createElement("div");
+    buttons.appendChild(deleteButton);
+    buttons.appendChild(readButton);
     bookCard.appendChild(bookTitle);
     bookCard.appendChild(bookAuthor);
     bookCard.appendChild(bookPages);
     bookCard.appendChild(haveRead);
+    bookCard.appendChild(buttons);
     bookCard.classList.add("book");
     library.appendChild(bookCard);
   });

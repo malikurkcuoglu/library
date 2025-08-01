@@ -27,7 +27,7 @@ addBookToLibrary("hobbit", "tolkien", 295, true, myLibrary);
 
 function displayLibrary(arr) {
   arr.forEach((book) => {
-    const bookTitle = document.createElement("h2");
+    const bookTitle = document.createElement("h3");
     bookTitle.textContent = `${book.title}`;
     const bookAuthor = document.createElement("p");
     const bookPages = document.createElement("p");

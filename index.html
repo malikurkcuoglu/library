@@ -8,8 +8,40 @@
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <main>
+    <main class="main">
       <h1 class="heading">Library Project</h1>
+      <form action="#" class="add-book-form">
+        <h2>Add book</h2>
+        <fieldset>
+          <ul class="form-elements">
+            <li>
+              <label for="title">Book title: </label>
+              <input type="text" id="title" name="title" />
+            </li>
+            <li>
+              <label for="pages">Page number: </label>
+              <input type="text" id="pages" name="pages" />
+            </li>
+            <li>
+              <label for="author">Author: </label>
+              <input type="text" id="author" name="author" />
+            </li>
+            <li>
+              <span>Read:</span>
+              <label for="read"
+                ><input type="radio" id="read" name="read-unread" /> Yes</label
+              >
+              <label for="unread"
+                ><input type="radio" id="unread" name="read-unread" /> No</label
+              >
+            </li>
+            <li>
+              <button type="button">Confirm</button>
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+      <h2>Your Books</h2>
       <section class="library"></section>
     </main>
   </body>

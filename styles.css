@@ -16,6 +16,11 @@ body {
   color: #333;
 }
 
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
 .heading {
   margin: auto;
   padding: 2rem;
@@ -24,6 +29,66 @@ body {
   color: oklch(98.5% 0.001 106.423);
 }
 
+.add-book-form {
+  justify-self: center;
+  background-color: #eee;
+  display: grid;
+  padding: 0 4rem 2rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+fieldset {
+  border: none;
+}
+
+.form-elements {
+  list-style-type: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.form-elements li {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: center;
+  padding: 0.5rem;
+  font-weight: 600;
+}
+
+input,
+.form-elements button {
+  padding: 0.4rem;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  padding-inline: 1rem;
+  background-color: oklch(93.2% 0.032 255.585);
+}
+
+input:focus {
+  outline: 1px solid oklch(37.9% 0.146 265.522);
+}
+
+.form-elements button {
+  grid-column: 1/3;
+  background-color: oklch(37.9% 0.146 265.522);
+  color: #eee;
+  font-weight: 600;
+  padding-block: 1rem;
+  width: 50%;
+  justify-self: center;
+  cursor: pointer;
+
+  font-size: 1.2rem;
+}
+
+h2 {
+  font-size: 3rem;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 2rem;
+}
 .library {
   display: grid;
   grid-template-columns: repeat(auto-fit, 400px);
@@ -38,29 +103,30 @@ body {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
   display: grid;
   align-content: start;
-  background-color: oklch(21% 0.034 264.665);
-  color: oklch(98.5% 0.001 106.423);
+  background-color: oklch(97% 0.014 254.604);
+  color: oklch(14.1% 0.005 285.823);
   overflow: auto;
   font-weight: 600;
   grid-template-rows: repeat(4, auto) 1fr;
 }
 
-.book h2 {
-  font-size: 1.8rem;
+.book h3 {
+  text-transform: capitalize;
+  font-size: 1.5rem;
   overflow-wrap: break-word;
   min-width: 0;
   max-width: 100%;
   text-align: center;
-  padding: 1rem;
-  border-bottom: oklch(98.5% 0.001 106.423) 4px solid;
+  padding: 0.9rem;
+  border-bottom: oklch(14.1% 0.005 285.823) 4px solid;
 }
 
 .book p:not(:last-of-type) {
-  border-bottom: oklch(98.5% 0.001 106.423) 1px solid;
+  border-bottom: oklch(14.1% 0.005 285.823) 1px solid;
 }
 
 .book p {
-  padding: 1rem;
+  padding: 0.7rem;
 }
 
 .buttons {

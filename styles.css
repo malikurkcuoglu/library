@@ -29,7 +29,11 @@ body {
   color: oklch(98.5% 0.001 106.423);
 }
 
-.add-book-form {
+.library-heading {
+  color: oklch(98.5% 0.001 106.423);
+}
+
+#add-book-form {
   justify-self: center;
   background-color: #eee;
   display: grid;

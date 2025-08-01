@@ -1,6 +1,7 @@
 const myLibrary = [];
 
-const library = document.querySelector(".library");
+const formSubmitButton = document.querySelector("#add-book");
+const main = document.querySelector(".main");
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -10,22 +11,11 @@ function Book(title, author, pages, read) {
   this.id = crypto.randomUUID();
 }
 
-function addBookToLibrary(title, author, pages, read, arr) {
-  const newBook = new Book(title, author, pages, read);
-  arr.push(newBook);
-}
-
-addBookToLibrary("hobbit", "tolkien", 295, true, myLibrary);
-addBookToLibrary("hobbit", "tolkien", 295, true, myLibrary);
-addBookToLibrary("hobbit", "tolkien", 295, true, myLibrary);
-addBookToLibrary("hobbit", "tolkien", 295, true, myLibrary);
-addBookToLibrary("hobbit", "tolkien", 295, true, myLibrary);
-addBookToLibrary("hobbit", "tolkien", 295, true, myLibrary);
-addBookToLibrary("hobbit", "tolkien", 295, true, myLibrary);
-addBookToLibrary("hobbit", "tolkien", 295, true, myLibrary);
-addBookToLibrary("hobbit", "tolkien", 295, true, myLibrary);
-
 function displayLibrary(arr) {
+  main.removeChild(document.querySelector(".library"));
+  const library = document.createElement("section");
+  library.classList.add("library");
+
   arr.forEach((book) => {
     const bookTitle = document.createElement("h3");
     bookTitle.textContent = `${book.title}`;
@@ -52,6 +42,26 @@ function displayLibrary(arr) {
     bookCard.classList.add("book");
     library.appendChild(bookCard);
   });
+  main.appendChild(library);
+}
+
+function addBookToLibrary(title, author, pages, read, arr) {
+  const newBook = new Book(title, author, pages, read);
+  arr.push(newBook);
+}
+
+function createBook(e) {
+  e.preventDefault();
+  const titleInput = document.querySelector("#title").value;
+  const authorInput = document.querySelector("#author").value;
+  const pagesInput = document.querySelector("#pages").value;
+  const readInput = document.querySelector("#read").checked;
+  addBookToLibrary(titleInput, authorInput, pagesInput, readInput, myLibrary);
+  displayLibrary(myLibrary);
 }
 
 displayLibrary(myLibrary);
+
+formSubmitButton.addEventListener("click", createBook);
+
+function deleteBook() {}

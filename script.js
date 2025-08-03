@@ -62,6 +62,12 @@ function displayLibrary(arr) {
       );
       displayLibrary(myLibrary);
     });
+    readButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      book.read = !book.read;
+      haveRead.textContent = `Read: ${book.read ? "Read" : "Not read yet"}`;
+      readButton.textContent = `${book.read ? "Not read" : "Read"}`;
+    });
   });
   main.appendChild(library);
 }
@@ -79,10 +85,7 @@ function createBook(e) {
   const readInput = document.querySelector("#read").checked;
   addBookToLibrary(titleInput, authorInput, pagesInput, readInput, myLibrary);
   displayLibrary(myLibrary);
+  dialog.close();
 }
 
-displayLibrary(myLibrary);
-
 formSubmitButton.addEventListener("click", createBook);
-
-function deleteBook() {}

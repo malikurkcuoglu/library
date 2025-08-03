@@ -29,6 +29,12 @@ body {
   color: oklch(98.5% 0.001 106.423);
 }
 
+dialog {
+  margin: auto;
+  border: none;
+  width: 50%;
+}
+
 .show-modal {
   width: 150px;
   padding: 1rem 1.2rem;
@@ -66,6 +72,7 @@ body {
   padding: 0 4rem 2rem;
   border-radius: 5px;
   font-size: 1.2rem;
+  width: 100%;
 }
 
 fieldset {
@@ -80,7 +87,8 @@ fieldset {
 
 .form-elements li {
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
   align-items: center;
   padding: 0.5rem;
   font-weight: 600;
@@ -91,9 +99,10 @@ fieldset {
 .form-elements li:nth-last-child(2) {
   border: none;
 }
-dialog {
-  margin: auto;
-  border: none;
+
+.radio-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
 }
 
 ::backdrop {
@@ -136,7 +145,7 @@ h2 {
 .library {
   display: grid;
   grid-template-columns: repeat(auto-fit, 400px);
-  grid-auto-rows: 250px;
+  grid-auto-rows: 270px;
   padding: 2rem;
   justify-content: center;
   gap: 2rem;
@@ -151,7 +160,7 @@ h2 {
   color: oklch(14.1% 0.005 285.823);
   overflow: auto;
   font-weight: 600;
-  grid-template-rows: 1fr repeat(3, auto) 1fr;
+  grid-template-rows: 70px repeat(4, auto);
 }
 
 .book h3 {
@@ -175,18 +184,23 @@ h2 {
 
 .buttons {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 40%);
+  justify-content: center;
+  gap: 1rem;
 }
 .buttons button {
   font-weight: 600;
   cursor: pointer;
   color: #eee;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
 }
 .buttons button:first-child {
-  background-color: oklch(50.5% 0.213 27.518);
+  background-color: oklch(14.1% 0.005 285.823);
 }
 .buttons button:last-child {
-  background-color: oklch(48.8% 0.243 264.376);
+  background-color: oklch(92.5% 0.084 155.995);
+  color: oklch(29.3% 0.066 243.157);
 }

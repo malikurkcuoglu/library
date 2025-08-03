@@ -2,6 +2,17 @@ const myLibrary = [];
 
 const formSubmitButton = document.querySelector("#add-book");
 const main = document.querySelector(".main");
+const dialog = document.querySelector("dialog");
+const modalOpen = document.querySelector(".show-modal");
+const modalClose = document.querySelector(".close-modal");
+
+modalOpen.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+modalClose.addEventListener("click", () => {
+  dialog.close();
+});
 
 function Book(title, author, pages, read) {
   this.title = title;

@@ -10,52 +10,65 @@
   <body>
     <main class="main">
       <h1 class="heading">Library Project</h1>
-      <form action="#" id="add-book-form">
-        <h2>Add book</h2>
-        <fieldset>
-          <ul class="form-elements">
-            <li>
-              <label for="title">Book title: </label>
-              <input required type="text" id="title" name="title" />
-            </li>
-            <li>
-              <label for="pages">Page number: </label>
-              <input required type="text" id="pages" name="pages" />
-            </li>
-            <li>
-              <label for="author">Author: </label>
-              <input required type="text" id="author" name="author" />
-            </li>
-            <li>
-              <span>Read:</span>
-              <label for="read"
-                ><input
-                  type="radio"
-                  id="read"
-                  name="read-unread"
-                  value="read"
-                  checked
+      <button class="show-modal">New Book</button>
+      <dialog>
+        <form action="#" id="add-book-form">
+          <h2>Add book</h2>
+          <fieldset>
+            <ul class="form-elements">
+              <li>
+                <label for="title">Book title: </label>
+                <input autofocus required type="text" id="title" name="title" />
+              </li>
+              <li>
+                <label for="pages">Page number: </label>
+                <input
+                  required
+                  type="number"
+                  id="pages"
+                  name="pages"
+                  min="0"
+                  max="3000"
                 />
-                Yes</label
-              >
-              <label for="unread"
-                ><input
-                  type="radio"
-                  id="unread"
-                  name="read-unread"
-                  value="unread"
-                />
-                No</label
-              >
-            </li>
-            <li>
-              <button type="submit" form="add-book-form" id="add-book">
-                Confirm
-              </button>
-            </li>
-          </ul>
-        </fieldset>
-      </form>
+              </li>
+              <li>
+                <label for="author">Author: </label>
+                <input required type="text" id="author" name="author" />
+              </li>
+              <li>
+                <span>Read:</span>
+                <label for="read"
+                  ><input
+                    type="radio"
+                    id="read"
+                    name="read-unread"
+                    value="read"
+                    checked
+                  />
+                  Yes</label
+                >
+                <label for="unread"
+                  ><input
+                    type="radio"
+                    id="unread"
+                    name="read-unread"
+                    value="unread"
+                  />
+                  No</label
+                >
+              </li>
+              <li>
+                <button type="submit" form="add-book-form" id="add-book">
+                  Confirm
+                </button>
+              </li>
+              <li>
+                <button class="close-modal">Close</button>
+              </li>
+            </ul>
+          </fieldset>
+        </form>
+      </dialog>
       <h2 class="library-heading">Your Books</h2>
       <section class="library"></section>
     </main>

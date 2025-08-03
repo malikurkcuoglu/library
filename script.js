@@ -5,8 +5,14 @@ const main = document.querySelector(".main");
 const dialog = document.querySelector("dialog");
 const modalOpen = document.querySelector(".show-modal");
 const modalClose = document.querySelector(".close-modal");
+const title = document.querySelector("#title");
+const author = document.querySelector("#author");
+const pages = document.querySelector("#pages");
 
 modalOpen.addEventListener("click", () => {
+  title.value = "";
+  author.value = "";
+  pages.value = "";
   dialog.showModal();
 });
 
@@ -79,9 +85,9 @@ function addBookToLibrary(title, author, pages, read, arr) {
 
 function createBook(e) {
   e.preventDefault();
-  const titleInput = document.querySelector("#title").value;
-  const authorInput = document.querySelector("#author").value;
-  const pagesInput = document.querySelector("#pages").value;
+  const titleInput = title.value;
+  const authorInput = author.value;
+  const pagesInput = pages.value;
   const readInput = document.querySelector("#read").checked;
   addBookToLibrary(titleInput, authorInput, pagesInput, readInput, myLibrary);
   displayLibrary(myLibrary);

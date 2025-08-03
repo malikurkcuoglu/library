@@ -10,7 +10,8 @@ modalOpen.addEventListener("click", () => {
   dialog.showModal();
 });
 
-modalClose.addEventListener("click", () => {
+modalClose.addEventListener("click", (e) => {
+  e.preventDefault();
   dialog.close();
 });
 
@@ -50,8 +51,17 @@ function displayLibrary(arr) {
     bookCard.appendChild(bookPages);
     bookCard.appendChild(haveRead);
     bookCard.appendChild(buttons);
+    bookCard.setAttribute("data-id", book.id);
     bookCard.classList.add("book");
     library.appendChild(bookCard);
+    deleteButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      myLibrary.splice(
+        myLibrary.findIndex((book) => book.id === bookCard.dataset.id),
+        1
+      );
+      displayLibrary(myLibrary);
+    });
   });
   main.appendChild(library);
 }
